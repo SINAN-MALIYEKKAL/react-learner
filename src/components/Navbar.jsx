@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import List from './list'
+// import List from './List'
 import { countries, genres } from '../lib/data'
 import { Icon } from '@iconify/react';
 import Search from './search';
@@ -7,6 +7,7 @@ import Card from './Card';
 import Mobilemenu from './Mobilemenu';
 import { Link } from 'react-router-dom';
 import logoIcon from "../assets/logo.png";
+import List from './List';
 
 const navitems = [
   {
