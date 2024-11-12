@@ -7,7 +7,7 @@ import Card from './Card';
 import Mobilemenu from './Mobilemenu';
 import { Link } from 'react-router-dom';
 import logoIcon from "../assets/logo.png";
-import List from '.components/List';
+import List from './components/List';
 
 
 const navitems = [
