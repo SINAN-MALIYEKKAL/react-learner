@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 // import List from './List'
 import { countries, genres } from '../lib/data'
 import { Icon } from '@iconify/react';
-import Search from './search';
+import Search from './Search';
 import Card from './Card';
 import Mobilemenu from './Mobilemenu';
 import { Link } from 'react-router-dom';
