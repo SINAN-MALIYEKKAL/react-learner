@@ -1,6 +1,7 @@
 import React from 'react';
-import List from './list';
+
 import { countries, genres } from '../lib/data';
+import List from './List';
 
 export default function Mobilemenu() {
   return (
