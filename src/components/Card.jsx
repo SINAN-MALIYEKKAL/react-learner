@@ -4,7 +4,7 @@ import { movies } from '../lib/data';
 
 export default function Card() {
   return (
-    <div className='bg-[#1f232c] flex justify-center relative flex-wrap gap-6 p-6 z-[-100]'>
+    <div className="bg-[#1f232c] flex justify-center relative flex-wrap gap-6 p-6">
       {movies &&
         movies.map((item) => (
           <div key={item.movieName} className="w-52 bg-[#181b22] rounded-lg shadow-lg overflow-hidden">
@@ -12,17 +12,14 @@ export default function Card() {
               <div className="relative">
                 <img
                   src={item.image}
-                  className="w-full h-72 object-cover"
                   alt={item.movieName}
+                  className="w-full h-72 object-cover"
+                  onError={(e) => e.target.src = '/path/to/fallback-image.jpg'} // Use a fallback image path
                 />
-                <div className="absolute inset-0 bg-black opacity-5 transition-opacity duration-300 hover:opacity-90 flex justify-center items-center z-10">
+                <div className="absolute inset-0 bg-black opacity-5 transition-opacity duration-300 hover:opacity-90 flex justify-center items-center">
                   <div className="flex items-center space-x-2">
-                    <svg className='bg-[#f05024] rounded-full p-1' xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 24 24">
-                      <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m-2 14.5v-9l6 4.5z"/>
-                    </svg>
-                    <svg className='bg-white rounded-full p-1' xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 16 16">
-                      <path fill="currentColor" d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0m1.062 4.312a1 1 0 1 0-2 0v2.75h-2.75a1 1 0 0 0 0 2h2.75v2.75a1 1 0 1 0 2 0v-2.75h2.75a1 1 0 1 0 0-2h-2.75Z"/>
-                    </svg>
+                    <PlayIcon />
+                    <AddIcon />
                   </div>
                 </div>
                 <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-t from-[#181b22] to-transparent"></div>
@@ -45,3 +42,15 @@ export default function Card() {
     </div>
   );
 }
+
+const PlayIcon = () => (
+  <svg className="bg-[#f05024] rounded-full p-1" xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 24 24" aria-label="Play">
+    <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m-2 14.5v-9l6 4.5z" />
+  </svg>
+);
+
+const AddIcon = () => (
+  <svg className="bg-white rounded-full p-1" xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 16 16" aria-label="Add">
+    <path fill="currentColor" d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0m1.062 4.312a1 1 0 1 0-2 0v2.75h-2.75a1 1 0 0 0 0 2h2.75v2.75a1 1 0 1 0 2 0v-2.75h2.75a1 1 0 1 0 0-2h-2.75Z" />
+  </svg>
+);
